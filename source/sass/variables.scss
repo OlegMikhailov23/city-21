@@ -1,0 +1,60 @@
+
+$tablet-widths: "min-width: 700px";
+$desktop-widths: "min-width: 1200px";
+$retina: "(min-resolution: 144dpi), (min-resolution: 1.5dppx)";
+
+$body-bg: #ffffff;
+
+$main-font-size: 14px;
+
+$main-line-height: 20px;
+
+$main-font-color: #000000;
+
+$header-color: #000000;
+
+$submit-btn-bg: #2aab6d;
+
+$light-blue-theme: #049aff;
+
+$section-background: #e7ebfc;
+
+@keyframes modal-bounce {
+    0% {
+        transform: translateY(-20px);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+};
+
+@keyframes main-nav-after-bounce {
+    0% {
+        transform: translateX(-10px);
+    }
+  
+    50% {
+        transform: translateX(10px);
+    }
+  
+    100% {
+        transform: translateX(0px);
+    }
+};
+
+@keyframes main-picture-bounce {
+    0% {
+        transform: translateY(-120px);
+    }
+    
+    50% {
+        transform: translateY(0px);
+    }
+    
+    100% {
+        transform: translateY(0px);
+    }
+};
