@@ -40,6 +40,32 @@
     @include font-size(20px,21px);
 }
 
+@mixin btn() {
+      display: block;
+      margin: 0 auto;
+      border-radius: 5px;
+      cursor: pointer;
+      @include padding-left-right (5px, 5px);
+      @include padding-top-bottom (5px, 5px);
+      @include font-size (10px, 12px);
+      text-transform: uppercase;
+      color: $font-color-white;
+      background-color: $submit-btn-bg;
+      font-family: inherit;
+      outline: none;
+       &:hover {
+            background-color: #1c9b5e;
+            transition: 0.3s;
+      }
+      
+      &:active {
+            color: rgba(255, 255, 255, 0.3);
+            transition: 0.3s;
+      }
+}
+
+
+
 .before-elem {
     content: "";
     display: block;

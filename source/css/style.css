@@ -146,8 +146,10 @@
     font-weight: 400;
     line-height: 20px;
 
-    color: #000; 
-    background-color: #fff;
+    height: 2000px; 
+
+    color: #000;
+    background-color: #ececec;
 }
 
 .preload
@@ -490,14 +492,12 @@ img
 
 .nav-wrapper
 {
-    position: -webkit-sticky;
-    /* Safari */
-    position:         sticky;
+    position: fixed;
     top: 0;
 
     width: 100%;
 
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, .6);
 }
 
 .grad-bar
@@ -521,22 +521,95 @@ img
     display: grid;
     overflow: hidden; 
 
-    height: 50px;
+    min-height: 60px;
 
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 3fr 2fr 1fr;
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
             align-items: center;
 }
 
-.navbar img
+.nav__logo
 {
-    width: auto;
-    height: 16px;
-    margin-left: 20px; 
+    font-size: 0;
 
-    justify-self: start;
+    display: block;
+
+    width: 80%;
+    height: 60px;
+
+    background-image: url('../img/logo.png');
+    background-repeat: no-repeat;
+    background-position: center; 
+    -webkit-background-size: 92% 65%;
+            background-size: 92% 65%;
+}
+
+.navbar__tel-block
+{
+    text-align: center;
+}
+
+.navbar__tel-link
+{
+    font-family: inherit; 
+    font-size: 1em;
+    font-weight: 700;
+    line-height: 28px;
+
+    text-decoration: none;
+
+    color: #fff;
+}
+.navbar__tel-link:hover
+{
+    -webkit-transition: .3s;
+         -o-transition: .3s;
+            transition: .3s;
+    text-decoration: none; 
+
+    color: #2aab6d;
+}
+
+.btn
+{
+    font-family: inherit;
+    font-size: 10px;
+    line-height: 12px;
+
+    display: block;
+
+    margin: 0 auto;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+
+    cursor: pointer;
+    text-transform: uppercase;
+
+    color: #fff;
+    -webkit-border-radius: 5px;
+            border-radius: 5px;
+    outline: none; 
+    background-color: #2aab6d;
+}
+.btn:hover
+{
+    -webkit-transition: .3s;
+         -o-transition: .3s;
+            transition: .3s; 
+
+    background-color: #1c9b5e;
+}
+.btn:active
+{
+    -webkit-transition: .3s;
+         -o-transition: .3s;
+            transition: .3s; 
+
+    color: rgba(255, 255, 255, .3);
 }
 
 .navbar ul
@@ -545,19 +618,26 @@ img
 
     list-style: none;
 
+    -webkit-box-shadow: inset -4px 0 7px -2px rgba(0, 0, 0, .4);
+            box-shadow: inset -4px 0 7px -2px rgba(0, 0, 0, .4); 
+
     grid-template-columns: repeat(6, 1fr);
-    justify-self: end;
+    justify-self: center;
 }
 
-.nav-item a
+.nav-item .navbar__link
 {
     font-size: .9rem;
     font-weight: 400;
+    font-weight: 700; 
+
+    display: block;
 
     -webkit-transition: color .3s ease-out;
          -o-transition: color .3s ease-out;
-            transition: color .3s ease-out; 
+            transition: color .3s ease-out;
     text-decoration: none;
+    text-transform: uppercase;
 
     color: #000;
 }
@@ -627,7 +707,7 @@ img
          -o-transition: all .3s ease-in-out;
             transition: all .3s ease-in-out; 
 
-    background-color: #3f3f3f;
+    background-color: #fff;
 }
 
 .menu-toggle
@@ -697,14 +777,91 @@ img
 }
 
 /* Media Queries */
+
 /* Mobile Devices - Phones/Tablets */
+
 @media (min-width: 700px)
 {
     .intro
     {
         background-image: url(img/intro-bg-tablet@1x.jpg);
     }
+    .navbar
+    {
+        grid-template-columns: 3fr 3fr 4fr;
+    }
+    .navbar ul
+    {
+        margin-bottom: 0;
+    }
+    .btn
+    {
+        font-size: 14px;
+        line-height: 16px; 
+
+        padding-top: 5px;
+        padding-right: 10px;
+        padding-bottom: 5px;
+        padding-left: 10px;
+    }
+    .nav-item .navbar__link
+    {
+        position: relative;
+
+        display: block;
+
+        height: 60px;
+        padding-top: 18px;
+        padding-right: 5px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+
+        text-align: center;
+        vertical-align: center;
+
+        color: #fff;
+    }
+    .nav-item .navbar__link:hover
+    {
+        -webkit-transition: .3s;
+             -o-transition: .3s;
+                transition: .3s; 
+
+        background-color: rgba(207, 207, 207, .3);
+    }
+    .nav-item .navbar__link:hover::before
+    {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        width: auto;
+        height: 3px;
+
+        content: '';
+        -webkit-animation: main-nav-after-bounce .2s;
+                animation: main-nav-after-bounce .2s; 
+
+        -webkit-border-radius: 20px;
+                border-radius: 20px;
+        background-color: #fff;
+    }
+    .navbar__tel-block
+    {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display:         flex;
+                flex-direction: column; 
+
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+    }
 }
+
 @media (min-width: 1200px)
 {
     .intro
@@ -715,14 +872,48 @@ img
     {
         background: #cfcfcf;
     }
+    .navbar ul
+    {
+        -webkit-box-shadow: none;
+                box-shadow: none;
+    }
+    .btn
+    {
+        font-size: 14px;
+        line-height: 16px; 
+
+        padding-top: 5px;
+        padding-right: 15px;
+        padding-bottom: 5px;
+        padding-left: 15px;
+    }
+    .nav__logo
+    {
+        -webkit-background-size: 80% 80%;
+                background-size: 80% 80%;
+    }
+    .navbar__tel-block
+    {
+                flex-direction: row; 
+
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+    }
+    .navbar__tel-link
+    {
+        font-size: 1.3em;
+    }
 }
+
 @media only screen and (max-width: 720px)
 {
     /* MOBILE NAVIGATION */
     .navbar ul
     {
         position: absolute;
-        top: 55px;
+        top: 65px;
 
         display: -webkit-box;
         display: -webkit-flex;
