@@ -41,20 +41,23 @@
 }
 
 @mixin btn() {
+
       display: block;
-      margin: 0 auto;
+      margin-top: 3%;
+      margin-bottom: 3%;
       border-radius: 5px;
       cursor: pointer;
       @include padding-left-right (5px, 5px);
       @include padding-top-bottom (5px, 5px);
       @include font-size (10px, 12px);
       text-transform: uppercase;
-      color: $font-color-white;
+      color: $main-font-color;
       background-color: $submit-btn-bg;
       font-family: inherit;
       outline: none;
+      text-align: center;
        &:hover {
-            background-color: #1c9b5e;
+            background-color: #ffeb81;
             transition: 0.3s;
       }
       
