@@ -1,0 +1,48 @@
+@import "../variables.scss";
+@import "../mixin.scss";
+
+.bottom-form__wrapper {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.bottom-form__wrapper .row {
+	padding: 0;
+	margin: 0;
+}
+
+.form__fields__bottom label {
+	width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.bottom__form-title {
+	@include padding-left-right(50px, 50px);
+    text-align: center;
+    font-size: 24px; 
+    padding-bottom: 10px;
+    color: $dark-purple;
+    line-height: 26px;
+}
+
+@media ($tablet-widths) {
+	.form__fields__bottom {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	
+	.form__fields__bottom label {
+		width: 45%;
+	}
+	
+	.form__btn-bottom {
+		margin-bottom: 20px;
+		padding-top: 10px;
+		padding-bottom: 8px;
+		width: 45%;
+	}
+	
+}

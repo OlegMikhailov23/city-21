@@ -47,9 +47,11 @@
     outline: none;
     border-radius: 30px;
     color: $main-font-color;
+    cursor: pointer;
     &:hover {
             background-color: #ffeb81;
             transition: 0.3s;
+            color: $btn-hover-color;
       }
     &:active {
             color: rgba(255, 255, 255, 0.3);
@@ -75,20 +77,47 @@
 
 .form-top__picture {
     display: none;
+    position: relative;
 }
 
+
+
 @media ($tablet-widths) {
+    .form-top {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 0px;
+}
+
+    .form-top__picture {
+    display: block;
+    background-position: center;
+    background-size: 100% 70%;
+    background-repeat: no-repeat;
+    background-image: url("../img/form-top-pic2.jpg");
+    & .form-top__picture-depict {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        @include padding-top-bottom (10px, 10px);
+        @include padding-left-right (5px, 5px);
+        background-color: $submit-btn-bg;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        letter-spacing: 1px;
+    }
+}
+}
+
+@media ($desktop-widths) {
     .form-top {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 20px;
 }
 
-    .form-top__picture {
-    display: block;
-    background-position: center;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-image: url("../img/form-top-pic2.jpg");
+.form-top__picture {
+
+    background-size: 90% 100%;
+
 }
 }

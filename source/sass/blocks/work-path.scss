@@ -1,0 +1,91 @@
+@import "../variables.scss";
+@import "../mixin.scss";
+
+.work-path {
+	background-color: #ffffff;
+	border-top: 5px solid $dark-purple;
+	border-bottom: 5px solid $dark-purple;
+	@include padding-top-bottom (20px, 20px);
+}
+
+
+.work-path-title {
+	display: block;
+	margin: 0 auto;
+	@include padding-left-right(100px, 100px);
+    text-align: center;
+    font-size: 2em;
+    line-height: 24px; 
+    padding-bottom: 10px;
+    color: $dark-purple;
+}
+
+.work-path__item {
+	position: relative;
+	@include padding-top-bottom(20px, 20px);
+	& .work-path__item-number {
+		@include before-elem();
+		top: 3%;
+		left: 3%;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		background-color: $dark-purple;
+		text-align: center;
+		padding-top: 10px;
+		font-size: 1em;
+		color: #ffffff;
+		border: 3px solid $submit-btn-bg;
+		box-shadow: 0 0 3px 1px #cccccc;
+	}
+}
+
+.work-path__item img {
+	display: block;
+	@include padding-top-bottom(5px, 5px);
+	height: 30%;
+	width: 30%;
+	margin: 0 auto;
+	margin-bottom: 15px;
+}
+
+.work-path__item-article {
+	@include zero-style();
+	font-size: 1.2em ;
+	text-align: center;
+	@include padding-left-right (30px, 30px);
+	padding-bottom: 15px;
+}
+
+.work-path__btn {
+	margin-top: 3%;
+	margin-bottom: 3%;
+	display: block;
+	margin: 0 auto;
+    @include padding-left-right (20px, 20px);
+    @include padding-top-bottom (10px, 10px);
+    @include font-size (16px, 24px);
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: $submit-btn-bg;
+    font-family: inherit;
+    outline: none;
+    border-radius: 30px;
+    color: $main-font-color;
+    cursor: pointer;
+    &:hover {
+            background-color: #ffeb81;
+            transition: 0.3s;
+      }
+    &:active {
+            color: rgba(255, 255, 255, 0.3);
+            transition: 0.3s;
+      }
+}
+
+@media ($desktop-widths) {
+	.work-path-title {
+		padding-top: 20px;
+		padding-bottom: 50px;
+	}
+}

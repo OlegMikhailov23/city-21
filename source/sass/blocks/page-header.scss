@@ -14,7 +14,7 @@
 	top: 0;
 	position: sticky;
     position: -webkit- sticky;
-    z-index: 900;
+    z-index: 50;
 }
 
 .page-wrapper {
@@ -25,7 +25,8 @@
 .nav-wrapper {
     width: 100%;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: #ffffff;/*rgba(0, 0, 0, 0.6)*/;
+    box-shadow: 1px 0 15px 1px #000000;;
 }
 
 .grad-bar {
@@ -50,12 +51,13 @@
 
 .nav__logo {
     display: block;
+    margin-left: 2%;
     font-size: 0;
-    width: 80%;
-    height: 60px;
-    background-image: url('../img/logo.png');
+    width: 85%;
+    height: 100%;
+    background-image: url('../img/main-logo.png');
     background-repeat: no-repeat;
-    background-size: 92% 65%;
+    background-size: 100% 50%;
     background-position: center;
 }
 
@@ -65,7 +67,7 @@
 
 .navbar__tel-link {
     text-decoration: none;
-    color: #ffffff;
+    color: $dark-purple;
     font-size: 0.9em;
     line-height: 28px;
     font-weight: 700;
@@ -78,11 +80,12 @@
     }
 }
 
-.btn {
+.navbar__btn-recall {
     @include btn();
     margin-top: 0;
     margin-bottom: 0;
     margin: 0 auto;
+    border-radius: 5px;
 }
 
 .navbar ul {
@@ -108,6 +111,72 @@
     color: $submit-btn-bg;
 }
 
+.main-nav__social-link {
+    @include zero-style();
+    display: block;
+    margin: 0 auto;
+    padding-top: 8px;
+    width: 250px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    margin-bottom: 3%;
+    text-decoration: none !important;
+    color: #ffffff;
+    &:hover {
+            color: $dark-purple;
+            transition: 0.3s;
+      }
+    &:active {
+            color: rgba(255, 255, 255, 0.3);
+            transition: 0.3s;
+      }
+}
+
+.main-nav__social-link-whatsup {
+    position: relative;
+    background-color: #00c5a8;
+    &:hover {
+        background-color: #8df5e6;
+        transition: 0.3s;
+    }
+}
+
+.main-nav__social-link-whatsup::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 80%;
+    top: 10%;
+    left: 13px;
+    background-image: url("../img/whatsapp-logo.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.main-nav__social-link-viber {
+    position: relative;
+    background-color: #6f51aa;
+    &:hover {
+        background-color: #966fe2;
+        transition: 0.3s;
+    }
+}
+
+.main-nav__social-link-viber::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 80%;
+    top: 10%;
+    left: 13px;
+    background-image: url("../img/viber-logo.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
 /* SECTIONS */
 
 
@@ -143,7 +212,7 @@
 .menu-toggle .bar {
     width: 25px;
     height: 3px;
-    background-color: #ffffff;
+    background-color: $dark-purple;
     margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
@@ -249,7 +318,7 @@
         @include padding-top-bottom (18px, 10px);
         vertical-align: center;
         display: block;
-        color: #ffffff;
+        color: $dark-purple;
 
         &:hover {
             background-color: rgba(207, 207, 207, 0.3);
@@ -264,7 +333,7 @@
             left: 0%;
             right: 0%;
             height: 3px;
-            background-color: #fff;
+            background-color: $dark-purple;
             border-radius: 20px;
             animation: main-nav-after-bounce 0.2s;
         }
@@ -273,6 +342,22 @@
     .navbar__tel-block {
         display: flex;
         flex-direction: column;
+    }
+
+    .main-nav__social-link {
+    width: 30px;
+    height: 30px;
+    font-size: 0;
+    margin-bottom: 0;
+    margin-top: 10px;
+    }
+
+    .main-nav__social-link-viber::before,
+    .main-nav__social-link-whatsup::before {
+    width: 20px;
+    height: 20px;
+    top: 4px;
+    left: 4px;
     }
 }
 

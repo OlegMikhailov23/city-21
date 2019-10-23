@@ -1,7 +1,7 @@
 @mixin container() {
     width: 320px;
     margin: 0 auto;
-    
+
 }
 
 @mixin zero-style() {
@@ -37,39 +37,73 @@
     height: 50px;
     border: 1px solid #858888;
     outline: none;
-    @include font-size(20px,21px);
+    @include font-size(20px, 21px);
 }
 
 @mixin btn() {
 
-      display: block;
-      margin-top: 3%;
-      margin-bottom: 3%;
-      border-radius: 5px;
-      cursor: pointer;
-      @include padding-left-right (5px, 5px);
-      @include padding-top-bottom (5px, 5px);
-      @include font-size (10px, 12px);
-      text-transform: uppercase;
-      color: $main-font-color;
-      background-color: $submit-btn-bg;
-      font-family: inherit;
-      outline: none;
-      text-align: center;
-       &:hover {
-            background-color: #ffeb81;
-            transition: 0.3s;
-      }
-      
-      &:active {
-            color: rgba(255, 255, 255, 0.3);
-            transition: 0.3s;
-      }
+    display: block;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 30px;
+    cursor: pointer;
+    @include padding-left-right (5px, 5px);
+    @include padding-top-bottom (5px, 5px);
+    @include font-size (10px, 12px);
+    text-transform: uppercase;
+    color: $main-font-color;
+    background-color: $submit-btn-bg;
+    font-family: inherit;
+    outline: none;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #ffeb81;
+        transition: 0.3s;
+    }
+
+    &:active {
+        color: rgba(255, 255, 255, 0.3);
+        transition: 0.3s;
+    }
+}
+
+@mixin link-btn() {
+    width: 80%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    display: block;
+    margin: 0 auto;
+    @include padding-left-right (20px, 20px);
+    @include padding-top-bottom (15px, 15px);
+    @include font-size (18px, 30px);
+    text-transform: uppercase;
+    color: $main-font-color;
+    background-color: $submit-btn-bg;
+    font-family: inherit;
+    outline: none;
+    border-radius: 30px;
+    color: $main-font-color;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none !important;
+
+    &:hover {
+        background-color: #ffeb81;
+        transition: 0.3s;
+        color: $btn-hover-color;
+    }
+
+    &:active {
+        color: rgba(255, 255, 255, 0.3);
+        transition: 0.3s;
+    }
 }
 
 
 
-.before-elem {
+@mixin before-elem() {
     content: "";
     display: block;
     position: absolute;

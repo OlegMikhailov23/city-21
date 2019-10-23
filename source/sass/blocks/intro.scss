@@ -82,6 +82,7 @@
     width: 150px;
     text-decoration: none !important;
     text-transform: normal;
+    border-radius: 5px;
     &:hover {
     	color: #000000;
     }
@@ -153,24 +154,24 @@
 	padding-right: 150px;
 }
 	 .intro {
-        height: 600px;
+        height: 650px;
     }
 
     .intro-slide {
-        height: 600px;
+        height: 650px;
     }
 
     .intro__slide-1 {
-        height: 600px;
+        height: 650px;
         background-image: url("../img/slider-1-tablet.jpg");
     }
 
     .intro__slide-2 {
-        height: 600px;
+        height: 650px;
     }
 
     .intro__slide-3 {
-        height: 600px;
+        height: 650px;
     }
 
 
