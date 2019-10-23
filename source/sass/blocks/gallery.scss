@@ -1,0 +1,73 @@
+@import "../variables.scss";
+@import "../mixin.scss";
+
+.gallery {
+	padding-top: 30px;
+}
+
+.gallery-title {
+	display: block;
+	margin: 0 auto;
+	@include padding-left-right(100px, 100px);
+    text-align: center;
+    font-size: 2em;
+    line-height: 24px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: $dark-purple;
+}
+
+.gallery__unit-container {
+	display: flex;
+	flex-direction: column;
+	margin: 1%;
+
+	border: 1px solid rgb(217, 217, 217);
+	border-radius: 30px;
+	overflow: hidden;
+	box-shadow: 0 0 3px 1px #cccccc;
+	background-color: #ffffff;
+	&:hover {
+		box-shadow: none;
+		transition: 0.3s;
+	}
+}
+
+.gallery__unit-title {
+	@include padding-left-right(20px, 20px);
+	padding-top: 20px;
+	text-align: center;
+	overflow: hidden;
+	@include font-size(20px, 21px);
+}
+
+.gallery__pic {
+	@include padding-top-bottom(5px, 5px);
+	height: 100%;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.gallery__article-container {
+	padding-top: 3%;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-bottom: 3%;
+	display: flex;
+	flex-direction: column;
+	background: #ffffff;
+	& .gallery__article {
+		@include zero-style();
+		font-size: 1em ;
+	}
+}
+
+.gallery__btn {
+	@include link-btn();
+}
+
+@media ($tablet-widths) {
+	.gallery__btn {
+		max-width: 350px;
+	}
+}
